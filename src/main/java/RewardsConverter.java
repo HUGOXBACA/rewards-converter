@@ -1,5 +1,18 @@
 import java.util.Scanner;
 
+class RewardValue {
+    private double cash;
+
+    public RewardValue(double cash) {
+        this.cash = cash;
+    }
+
+    public double getMilesValue() {
+        // Adjust this conversion logic based on your requirements
+        return cash * 0.0035;
+    }
+}
+
 public class RewardsConverter {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
@@ -13,7 +26,7 @@ public class RewardsConverter {
             System.out.println("Could not parse input value as a double, exiting");
             return;
         }
-        System.out.println("converting $" + input_value + " to miles");
+        System.out.println("Converting $" + input_value + " to miles");
         var rewardsValue = new RewardValue(cashValue);
         System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
     }
